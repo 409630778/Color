@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage>{
     setState(() {
       backnum[0]= (backnum[0] + 1) % backgroundsH.length;
     });
+
   }
 
 
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage>{
     return
       Scaffold(
           appBar: AppBar(
-            elevation:1,
+            elevation:5,
             backgroundColor:Happbar[backnum[0]],
             title: Text('Money manager',
               style:HbarText[backnum[0]] ,),
@@ -322,8 +323,8 @@ class _MonthPageState extends State<MonthPage>{
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Asset:',style: TextStyle(color: Colors.white,fontSize: 20),),
-                  Text('\$'+assets[widget.month].toString(),style: TextStyle(color: Colors.white,fontSize: 30),),
+                  Text('Asset:',style: CardAsText[backnum[widget.month]]),
+                  Text('\$'+assets[widget.month].toString(),style: CardMAsText[backnum[widget.month]]),
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child:Row(
